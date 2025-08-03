@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>HiGUARD Fire Extinguisher</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .logo {
+      width: 80%;
+      margin-top: 20px;
+    }
+
+    hr {
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    .tebal {
+      font-weight: 600;
+    }
+
+    .marquee {
+      color: red;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .nav a {
+      margin: 0 15px;
+      font-size: 18px;
+      color: red;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    table.produk {
+      width: 80%;
+      margin: 30px auto;
+    }
+
+    table.produk td {
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .produk1, .produk3 {
+      background-color: red;
+    }
+
+    .produk2 {
+      background-color: black;
+      color: white;
+      font-weight: 600;
+    }
+
+    .btn-beli {
+      display: inline-block;
+      background-color: white;
+      color: red;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: black;
+    }
+
+    .footer span {
+      color: red;
+    }
+  </style>
+
+  <script>
+    window.onload = function() {
+      document.body.style.opacity = "0";
+      setTimeout(function() {
+        document.body.style.transition = "opacity 1s";
+        document.body.style.opacity = "1";
+      }, 100);
+    }
+  </script>
+</head>
+<body>
+
+  <img src="logo.jpg" alt="HiGUARD Logo" class="logo">
+
+  <hr style="border: 5px solid white;">
+
+  <marquee behavior="scroll" direction="left" class="marquee">
+    🔥 Extinguish Danger, Protect Everything 🔥
+  </marquee>
+
+  <hr style="border: 3px solid white;">
+
+  <div class="nav">
+    <a href="home.html">Home</a>
+    <a href="buynow.html">Buy Now</a>
+    <a href="aboutus.html">About Us</a>
+	<a href="invoice.html">Invoice</a>
+
+  </div>
+
+  <table class="produk">
+    <tr>
+     <td style="text-align: center; background-color: red; padding: 15px; border-radius: 10px;">
+    <img src="produk1.jpg" alt="Alat Pemadam 1" style="width: 200px;"><br>
+    <p style="color: white; font-weight: 600;">Rp 150.000</p>
+    <a href="buynow.html" style="display: inline-block; background-color: white; color: red; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 600;">
+        Alat Pemadam 1
+    </a>
+</td>
+ <td class="produk2">
+        <img src="produk2.jpg" alt="Semua Produk" style="width: 300px;"><br>
+        Semua Produk
+      </td>
+	  
+
+     <td style="text-align: center; background-color: red; padding: 15px; border-radius: 10px;">
+    <img src="produk1.jpg" alt="Alat Pemadam 1" style="width: 200px;"><br>
+    <p style="color: white; font-weight: 600;">Rp 200.000</p>
+    <a href="buynow.html" style="display: inline-block; background-color: white; color: red; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 600;">
+        Alat Pemadam 2
+    </a>
+</td>
+
+      </td>
+    </tr>
+  </table>
+
+  <p class="footer">
+    © 2025 <span>HiGUARD Fire Extinguisher</span> | <span>Tazkia Aisyah Putri</span> | 10524066
+  </p>
+
+</body>
+</html>

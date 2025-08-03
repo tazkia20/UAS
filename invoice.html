@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice - HiGUARD</title>
+</head>
+<body style="background-color: black; color: white; font-family: Arial, sans-serif; text-align: center;">
+
+  <img src="logo.jpg" alt="HiGUARD Logo" style="width: 80%; margin-top: 20px;"><br>
+  <hr style="border: 5px solid white; width: 80%; margin: 20px auto;">
+  <marquee behavior="scroll" direction="left" style="color: red; font-size: 20px; font-weight: 600;">
+    🔥 Terima kasih telah berbelanja di HiGUARD 🔥
+  </marquee>
+  <hr style="border: 3px solid white; width: 80%; margin: 20px auto;">
+
+  <div style="margin: 20px;">
+    <a href="home.html" style="margin: 0 15px; font-size: 18px; color: red; font-weight: 600; text-decoration: none;">Home</a>
+    <a href="buynow.html" style="margin: 0 15px; font-size: 18px; color: red; font-weight: 600; text-decoration: none;">Buy Now</a>
+    <a href="aboutus.html" style="margin: 0 15px; font-size: 18px; color: red; font-weight: 600; text-decoration: none;">About Us</a>
+    <a href="invoice.html" style="margin: 0 15px; font-size: 18px; color: red; font-weight: 600; text-decoration: none;">Invoice</a>
+</div>
+
+
+  <h2 style="color: red;">INVOICE PEMBELIAN</h2>
+
+  <table align="center" cellpadding="10" cellspacing="0" bgcolor="white" style="color: black; width: 60%; border-radius: 10px;">
+    <tr><td><strong>Nama Pembeli</strong></td><td id="inv-name">-</td></tr>
+    <tr><td><strong>Alamat</strong></td><td id="inv-address">-</td></tr>
+    <tr><td><strong>Produk</strong></td><td id="inv-product">-</td></tr>
+    <tr><td><strong>Harga</strong></td><td id="inv-total">-</td></tr>
+    <tr><td><strong>Metode Pembayaran</strong></td><td id="inv-payment">-</td></tr>
+    <tr><td><strong>Status</strong></td><td style="color: green;"><b>LUNAS</b></td></tr>
+  </table>
+
+  <p style="margin-top: 30px;">Terima kasih atas kepercayaan Anda 💖</p>
+
+  <p style="margin-top: 50px; font-size: 14px; color: white;">
+    © 2025 <span style="color: red;">HiGUARD Fire Extinguisher</span> | <span style="color: red;">Tazkia Aisyah Putri</span> | 10524066
+  </p>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("invoiceData"));
+    if (data) {
+      document.getElementById("inv-name").innerText = data.fullname;
+      document.getElementById("inv-address").innerText = data.address;
+      document.getElementById("inv-product").innerText = data.product;
+      document.getElementById("inv-total").innerText = data.total;
+      document.getElementById("inv-payment").innerText = data.payment;
+    } else {
+      alert("Data transaksi belum diisi!");
+    }
+  </script>
+
+</body>
+</html>

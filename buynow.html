@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HiGUARD Fire Extinguisher - Buy Now</title>
+</head>
+<body style="background-color: black; color: white; font-family: Arial, sans-serif; text-align: center;">
+
+    <img src="logo.jpg" alt="HiGUARD Logo" style="width: 80%; margin-top: 20px;"><br>
+    <hr style="border: 5px solid white; width: 80%; margin: 20px auto;">
+
+    <marquee behavior="scroll" direction="left" style="color: red; font-size: 20px; font-weight: 600;">
+        🔥 Extinguish Danger, Protect Everything 🔥
+    </marquee>
+	
+    <hr style="border: 3px solid white; width: 80%; margin: 20px auto;">
+	
+<div style="margin: 20px;">
+    <a href="home.html" style="margin: 0 15px; font-size: 18px; color: red; font-weight: 600; text-decoration: none;">Home</a>
+    <a href="buynow.html" style="margin: 0 15px; font-size: 18px; color: red; font-weight: 600; text-decoration: none;">Buy Now</a>
+    <a href="aboutus.html" style="margin: 0 15px; font-size: 18px; color: red; font-weight: 600; text-decoration: none;">About Us</a>
+    <a href="invoice.html" style="margin: 0 15px; font-size: 18px; color: red; font-weight: 600; text-decoration: none;">Invoice</a>
+</div>
+
+
+    <h2 style="color: red;">Formulir Pembelian</h2>
+
+    <form onsubmit="saveData(event)">
+        <table align="center" cellpadding="10" cellspacing="0" bgcolor="black" width="600">
+            <tr>
+                <td style="color: white; font-weight: 600;">Nama Lengkap</td>
+                <td><input type="text" id="fullname" name="fullname" size="40" required></td>
+            </tr>
+            <tr>
+                <td style="color: white; font-weight: 600;">Alamat Pengiriman</td>
+                <td><input type="text" id="address" name="address" size="40" required></td>
+            </tr>
+            <tr>
+                <td style="color: white; font-weight: 600;">Pilih Produk</td>
+                <td>
+                    <select id="product" name="product" onchange="updatePrice()" required>
+                        <option value="">-- Pilih Produk --</option>
+                        <option value="Alat Pemadam 1">Alat Pemadam 1 - Rp150.000</option>
+                        <option value="Alat Pemadam 2">Alat Pemadam 2 - Rp200.000</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: white; font-weight: 600;">Total</td>
+                <td><input type="text" id="total" name="total" size="40" readonly required></td>
+            </tr>
+            <tr>
+                <td style="color: white; font-weight: 600;">Metode Pembayaran</td>
+                <td>
+                    <select id="payment" name="payment" required>
+                        <option value="GoPay">GoPay</option>
+                        <option value="Bank Transfer">Bank Transfer</option>
+                        <option value="ShopeePay">ShopeePay</option>
+                        <option value="DANA">DANA</option>
+                        <option value="COD">Cash on Delivery (COD)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Kirim Pesanan" style="padding: 10px 20px; font-weight: bold;">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <p style="margin-top: 50px; font-size: 14px; color: white;">
+        © 2025 <span style="color: red;">HiGUARD Fire Extinguisher</span> | <span style="color: red;">Tazkia Aisyah Putri</span> | 10524066
+    </p>
+
+    <!-- JavaScript untuk handle form -->
+    <script>
+        function updatePrice() {
+            const product = document.getElementById("product").value;
+            const totalField = document.getElementById("total");
+
+            if (product === "Alat Pemadam 1") {
+                totalField.value = "Rp150.000";
+            } else if (product === "Alat Pemadam 2") {
+                totalField.value = "Rp200.000";
+            } else {
+                totalField.value = "";
+            }
+        }
+
+        function saveData(event) {
+            event.preventDefault();
+
+            const data = {
+                fullname: document.getElementById("fullname").value,
+                address: document.getElementById("address").value,
+                product: document.getElementById("product").value,
+                total: document.getElementById("total").value,
+                payment: document.getElementById("payment").value
+            };
+
+            localStorage.setItem("invoiceData", JSON.stringify(data));
+            window.location.href = "invoice.html";
+        }
+    </script>
+
+</body>
+</html>
